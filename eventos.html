@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <!-- Bootstrap -->
+  <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <script>
+    const handleClickCadastrar = (event) => {
+      console.log("Cadastrou usuaário!");
+    }
+
+    const handleMouseOverCadastrar = (event) => {
+      console.log("Passou o mouse no botão de cadastro!");
+      let mensagemP = document.getElementById("mensagem");
+      mensagemP.style.backgroundColor = "red";
+
+      return "Olá";
+    }
+
+    // Modo 1
+    let cadastrarButton = document.getElementById("cadastrarButton");
+    cadastrarButton.addEventListener("click", handleClickCadastrar);
+    cadastrarButton.addEventListener("mouseover", handleMouseOverCadastrar);
+
+    // Modo 2
+    cadastrarButton.onclick = handleClickCadastrar;
+    cadastrarButton.onmouseover = handleMouseOverCadastrar;
+  </script>
+</head>
+
+<body>
+  <!-- Modo básico -->
+  <button type="button" id="cadastrarButton" class="btn btn-primary" onclick="handleClickCadastrar()" onmouseover="handleMouseOverCadastrar()">
+    Cadastrar
+  </button>
+
+  <p id="mensagem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis atque inventore temporibus ex id illum odio, sit sunt aut beatae doloribus hic et dicta facilis, accusamus at obcaecati quis veritatis.</p>
+
+  <!-- Bootstrap -->
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
